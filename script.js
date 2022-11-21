@@ -12,6 +12,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-// lets test this out and remove develop folder
+//okay finaly test then lets code
+//final final 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
