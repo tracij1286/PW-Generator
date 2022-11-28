@@ -32,6 +32,7 @@ https://w3collective.com/random-password-generator-javascript/
 
 ## Link to live site
 
+https://tracij1286.github.io/PW-Generator/
 
 
 ## License
