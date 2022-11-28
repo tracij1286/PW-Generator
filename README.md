@@ -26,6 +26,14 @@ https://www.youtube.com/watch?v=duNmhKgtcsI&t=274s
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+https://w3collective.com/random-password-generator-javascript/
+
+## Link to live site
+
+
+
 ## License
 
 N/A

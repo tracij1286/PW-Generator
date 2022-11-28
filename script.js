@@ -1,4 +1,3 @@
-//Dom element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -17,16 +16,16 @@ function generatePassword() {
   var pwLength = parseInt(prompt('Enter a number between 8-128'), 10);
   while (pwLength > 128 || pwLength < 8 || Number.isNaN(pwLength) || pwLength == undefined) {
     alert("Sorry, That's not a valid number. Please enter a number from 8-128.");
-    pwLength = prompt('Enter a number between 8-128');
+    pwLength = prompt('Please enter a number from 8-128');
   }
 
-  // Defining variables for upper, lower, numbers and special characters
+  // Variables for upper, lower, numbers and special characters
   var confirmUpper = false;
   var confirmLower = false;
-  var confirmNumber = false;
   var confirmSpecial = false;
+  var confirmNumber = false;
 
-  // " If " answers are false, it'll loop back through to get atleast one true.
+  // looping back through to get one true.
   while (confirmUpper == false && confirmLower == false
     && confirmNumber == false && confirmSpecial == false) {
 
@@ -40,10 +39,10 @@ function generatePassword() {
   // Character Arrays
   var upperCaseChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   var lowerCaseChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var numericChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
   var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '|', '[', ']', ';', "'", ':', '<', '>', '?', '/'];
+  var numericChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
-  // Array created based on the answers
+  // Array created based on the responses
   var passwordPool = [];
 
   // arrays containing the options the user chose to include in the pw
@@ -97,6 +96,6 @@ function generatePassword() {
     password = pushChar();
   }
 
-  // randomly generated pw, a string.
+  // randomly generated pw
   return password.join('');
 }
