@@ -24,6 +24,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arro
 
 https://www.youtube.com/watch?v=duNmhKgtcsI&t=274s
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+
 ## License
 
 N/A

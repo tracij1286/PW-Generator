@@ -15,8 +15,8 @@ generateBtn.addEventListener('click', writePassword);
 // Generate password with a min of 8 characters and max 128
 function generatePassword() {
   var pwLength = parseInt(prompt('Enter a number between 8-128'), 10);
-  while (pwLength > 128 || pwLength < 8 || Number.isNaN(pwLength) || pwLength == null) {
-    alert("That's not a valid number. Please enter a number from 8-128.");
+  while (pwLength > 128 || pwLength < 8 || Number.isNaN(pwLength) || pwLength == undefined) {
+    alert("Sorry, That's not a valid number. Please enter a number from 8-128.");
     pwLength = prompt('Enter a number between 8-128');
   }
 
@@ -29,6 +29,7 @@ function generatePassword() {
   // " If " answers are false, it'll loop back through to get atleast one true.
   while (confirmUpper == false && confirmLower == false
     && confirmNumber == false && confirmSpecial == false) {
+
     alert('Please select a type of character');
     confirmUpper = confirm('Would you like to include upper case letters? select OK if Yes, Cancel if No?');
     confirmLower = confirm('Would you like to include lower case letters? select OK if Yes, Cancel if No?');
@@ -43,7 +44,7 @@ function generatePassword() {
   var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '|', '[', ']', ';', "'", ':', '<', '>', '?', '/'];
 
   // Array created based on the answers
-  const passwordPool = [];
+  var passwordPool = [];
 
   // arrays containing the options the user chose to include in the pw
   function generateChar() {
@@ -53,11 +54,11 @@ function generatePassword() {
     if (confirmUpper) {
       passwordPool.push(...upperCaseChar);
     }
-    if (confirmNumber) {
-      passwordPool.push(...numericChar);
-    }
     if (confirmSpecial) {
       passwordPool.push(...specialChar);
+    }
+    if (confirmNumber) {
+      passwordPool.push(...numericChar);
     }
   }
   generateChar();
@@ -67,7 +68,7 @@ function generatePassword() {
   function pushChar() {
     var randomPassword = [];
     for (var i = 0; i < pwLength; i += 1) {
-      const item = passwordPool[Math.floor(Math.random() * passwordPool.length)];
+      var item = passwordPool[Math.floor(Math.random() * passwordPool.length)];
       randomPassword.push(item);
     }
     return randomPassword;
@@ -80,15 +81,15 @@ function generatePassword() {
     var checkNumeric = (numericChar.some((ele) => password.includes(ele)));
     var checkSpecial = (specialChar.some((ele) => password.includes(ele)));
 
-    console.log(checkUpper);
     console.log(checkLower);
+    console.log(checkUpper);
     console.log(checkNumeric);
     console.log(checkSpecial);
 
     return checkUpper == confirmUpper
       && checkLower == confirmLower
-      && checkNumeric == confirmSpecial
-      && checkSpecial == confirmNumber;
+      && checkNumeric == confirmNumber
+      && checkSpecial == confirmSpecial;
   }
 
   var password = [];
